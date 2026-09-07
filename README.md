@@ -2,46 +2,58 @@
 
 An end-to-end Deep Learning web application designed to assist in the early detection of skin cancer. Built with **Python**, **TensorFlow**, and **Streamlit**.
 
+---
+
 ## 🚀 Overview
-Skin cancer is one of the most common forms of cancer, but early detection significantly improves survival rates. This project uses the **MobileNetV2** architecture (Transfer Learning) to classify skin lesions into 7 different categories with high accuracy.
+
+Skin cancer is one of the most common forms of cancer, but early detection significantly improves survival rates. This project leverages the **MobileNetV2** architecture (Transfer Learning) to classify dermatological lesions into 7 diagnostic categories from the ISIC Archive.
 
 ### Key Features:
-- **Instant Prediction:** Upload an image and get results in seconds.
-- **High Accuracy:** Achieved 99% accuracy on test samples using the ISIC dataset.
-- **Automated Reports:** Generates a professional **PDF Diagnostic Report** with a click.
-- **User-Friendly UI:** Simple and clean interface built with Streamlit.
+* **Instant Prediction:** Upload a dermoscopic image and get classification results in seconds.
+* **Robust Performance:** High multiclass diagnostic sensitivity evaluated against benchmark ISIC samples.
+* **Automated PDF Reports:** Generates a structured clinical diagnostic summary PDF using FPDF.
+* **Streamlit UI:** Clean, intuitive interface for seamless user interaction.
+
+---
 
 ## 🛠️ Tech Stack
-- **Deep Learning:** TensorFlow, Keras, MobileNetV2
-- **Web Framework:** Streamlit
-- **Data Handling:** NumPy, Pandas, PIL
-- **Report Generation:** FPDF
-- **Programming Language:** Python
+
+* **Deep Learning:** TensorFlow, Keras, MobileNetV2
+* **Web Framework:** Streamlit
+* **Data Processing & Vision:** NumPy, Pandas, Pillow (PIL)
+* **Report Generation:** FPDF
+* **Language:** Python 3.x
+
+---
 
 ## ⚙️ Installation & Usage
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/surajkumarrana9/Skin-Cancer-Detection-AI.git](https://github.com/surajkumarrana9/Skin-Cancer-Detection-AI.git)
-Install dependencies:
+1. Clone the repository:
+   git clone https://github.com/surajkumarrana9/Skin-Cancer-Detection-AI.git
+   cd Skin-Cancer-Detection-AI
 
-Bash
-pip install -r requirements.txt
-Run the App:
+2. Install dependencies:
+   pip install -r requirements.txt
 
-Bash
-streamlit run app.py
-
-
-## 📊 Model Performance
-- **Base Model:** MobileNetV2 (Transfer Learning)
-- **Dataset:** ISIC Archive
-- **Training Strategy:** Data Augmentation and Fine-tuning.
-
-## ⚠️ Disclaimer
-*This project is for educational purposes only. It is NOT a substitute for professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare provider for medical concerns.*
+3. Run the Streamlit Application:
+   streamlit run app.py
 
 ---
+
+## 📊 Model & Dataset Details
+
+* Base Architecture: MobileNetV2 (Pre-trained on ImageNet, fine-tuned for lesion classification)
+* Dataset: ISIC (International Skin Imaging Collaboration) Archive
+* Optimization: Data Augmentation (rotation, zoom, flip) and Dropout layers to prevent overfitting.
+
+---
+
+## ⚠️ Disclaimer
+
+This project is built strictly for educational and research purposes. It is not intended to replace certified medical diagnosis or clinical consultation.
+
+---
+
 **Developed by Suraj Kumar Rana**  
 📍 Ranchi, Jharkhand  
 🔗 [LinkedIn](https://www.linkedin.com/in/surajrana-ai/) | [GitHub](https://github.com/surajkumarrana9)
