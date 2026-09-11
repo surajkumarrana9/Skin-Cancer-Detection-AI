@@ -1,6 +1,5 @@
 tensorflow
-pandas
+streamlit
 numpy
-matplotlib
-scikit-learn
-opencv-python
+pillow
+fpdf2

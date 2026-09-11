@@ -1,10 +1,17 @@
 import tensorflow as tf
 import numpy as np
 from tensorflow.keras.preprocessing import image
-import os
+from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parent
+MODEL_PATH = ROOT_DIR / "skin_cancer_model.keras"
+TEST_IMAGE = ROOT_DIR / "test.jpg"
+
+if not MODEL_PATH.is_file():
+    raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
 
 # 1. Model load karo
-model = tf.keras.models.load_model('models/skin_cancer_model.keras')
+model = tf.keras.models.load_model(MODEL_PATH)
 
 # 2. Bimariyon ke naam (Categories)
 class_names = [
@@ -31,10 +38,6 @@ def predict_skin_issue(img_path):
     print(f"Confidence: {100 * score[result_index]:.2f}%")
     print("----------------------------\n")
 
-# Yahan apni test image ka path daalo
-# test_image = 'data/organized_data/Melanoma/ISIC_0024306.jpg' # Example path
-# predict_skin_issue(test_image)
-
-test_image = 'test.jpg'
-test_image = r'E:\Skin_Cancer_Detection\data\all_images\ISIC_0024306.jpg'
-predict_skin_issue(test_image)
+# Use the repository sample image by default. Pass another path by importing
+# predict_skin_issue from a separate script when testing a different image.
+predict_skin_issue(TEST_IMAGE)
