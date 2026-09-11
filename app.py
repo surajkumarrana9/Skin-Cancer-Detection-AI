@@ -5,6 +5,7 @@ import numpy as np
 from PIL import Image
 from fpdf import FPDF
 import datetime
+from pathlib import Path
 
 # 1. Page Settings
 st.set_page_config(page_title="Skin Cancer Detector", layout="centered")
@@ -20,7 +21,10 @@ if 'confidence' not in st.session_state:
 # 2. Model Load Karo
 @st.cache_resource
 def load_my_model():
-    return tf.keras.models.load_model('models/skin_cancer_model.keras')
+    model_path = Path(__file__).resolve().parent / "skin_cancer_model.keras"
+    if not model_path.is_file():
+        raise FileNotFoundError(f"Model file not found: {model_path}")
+    return tf.keras.models.load_model(model_path)
 
 model = load_my_model()
 
